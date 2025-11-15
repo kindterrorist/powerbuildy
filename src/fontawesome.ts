@@ -1,0 +1,60 @@
+// src/fontawesome.ts
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faDumbbell,
+  faPalette,
+  faFolderOpen,
+  faSave,
+  faEye,
+  faDownload,
+  faPlus,
+  faTrash,
+  faEdit,
+  faCalendarDay,
+  faList,
+  faUser,
+  faFileAlt,
+  faGripLines,
+  faCalendarPlus,
+  faCheckCircle,
+  faImage,
+  faChalkboardTeacher,
+  faDatabase,
+  faFileExport,
+  faFileImport,
+  faInfoCircle,
+  faPlusCircle,
+  faSyncAlt,
+  faStar,
+  // Note: We are *not* adding faHeart, faBackspace, faWalking, faHandPointUp, faHand, faWind here
+} from "@fortawesome/free-solid-svg-icons";
+
+// Add icons to the library
+library.add(
+  faDumbbell,
+  faPalette,
+  faFolderOpen,
+  faSave,
+  faEye,
+  faDownload,
+  faPlus,
+  faTrash,
+  faEdit,
+  faCalendarDay,
+  faList,
+  faUser,
+  faFileAlt,
+  faGripLines,
+  faCalendarPlus,
+  faCheckCircle,
+  faImage,
+  faChalkboardTeacher,
+  faDatabase,
+  faFileExport,
+  faFileImport,
+  faInfoCircle,
+  faPlusCircle,
+  faSyncAlt,
+  faStar
+  // faHeart, faBackspace, faWalking, faHandPointUp, faHand, faWind are NOT added
+);

@@ -1,0 +1,230 @@
+{
+  "chest": [
+    {
+      "name": "Barbell Bench Press",
+      "equipment": "Barbell",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/bench"
+    },
+    {
+      "name": "Incline Dumbbell Press",
+      "equipment": "Dumbbells",
+      "difficulty": "Beginner",
+      "video": "https://example.com/incline"
+    },
+    {
+      "name": "Decline Bench Press",
+      "equipment": "Barbell",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/decline"
+    },
+    {
+      "name": "Cable Flyes",
+      "equipment": "Cable",
+      "difficulty": "Beginner",
+      "video": "https://example.com/cable-fly"
+    },
+    {
+      "name": "Dumbbell Flyes",
+      "equipment": "Dumbbells",
+      "difficulty": "Beginner",
+      "video": "https://example.com/flyes"
+    },
+    {
+      "name": "Push-ups",
+      "equipment": "Bodyweight",
+      "difficulty": "Beginner",
+      "video": "https://example.com/pushups"
+    }
+  ],
+  "back": [
+    {
+      "name": "Deadlift",
+      "equipment": "Barbell",
+      "difficulty": "Advanced",
+      "video": "https://example.com/deadlift"
+    },
+    {
+      "name": "Pull-ups",
+      "equipment": "Bodyweight",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/pullups"
+    },
+    {
+      "name": "Barbell Rows",
+      "equipment": "Barbell",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/rows"
+    },
+    {
+      "name": "Lat Pulldown",
+      "equipment": "Cable",
+      "difficulty": "Beginner",
+      "video": "https://example.com/lat-pulldown"
+    },
+    {
+      "name": "T-Bar Rows",
+      "equipment": "Machine",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/tbar"
+    },
+    {
+      "name": "Seated Cable Rows",
+      "equipment": "Cable",
+      "difficulty": "Beginner",
+      "video": "https://example.com/seated-rows"
+    }
+  ],
+  "legs": [
+    {
+      "name": "Barbell Squats",
+      "equipment": "Barbell",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/squats"
+    },
+    {
+      "name": "Leg Press",
+      "equipment": "Machine",
+      "difficulty": "Beginner",
+      "video": "https://example.com/leg-press"
+    },
+    {
+      "name": "Romanian Deadlift",
+      "equipment": "Barbell",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/rdl"
+    },
+    {
+      "name": "Leg Curls",
+      "equipment": "Machine",
+      "difficulty": "Beginner",
+      "video": "https://example.com/leg-curls"
+    },
+    {
+      "name": "Leg Extensions",
+      "equipment": "Machine",
+      "difficulty": "Beginner",
+      "video": "https://example.com/leg-extensions"
+    },
+    {
+      "name": "Lunges",
+      "equipment": "Dumbbells",
+      "difficulty": "Beginner",
+      "video": "https://example.com/lunges"
+    },
+    {
+      "name": "Calf Raises",
+      "equipment": "Machine",
+      "difficulty": "Beginner",
+      "video": "https://example.com/calf-raises"
+    }
+  ],
+  "shoulders": [
+    {
+      "name": "Overhead Press",
+      "equipment": "Barbell",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/ohp"
+    },
+    {
+      "name": "Dumbbell Shoulder Press",
+      "equipment": "Dumbbells",
+      "difficulty": "Beginner",
+      "video": "https://example.com/dumbbell-press"
+    },
+    {
+      "name": "Lateral Raises",
+      "equipment": "Dumbbells",
+      "difficulty": "Beginner",
+      "video": "https://example.com/lateral-raises"
+    },
+    {
+      "name": "Front Raises",
+      "equipment": "Dumbbells",
+      "difficulty": "Beginner",
+      "video": "https://example.com/front-raises"
+    },
+    {
+      "name": "Face Pulls",
+      "equipment": "Cable",
+      "difficulty": "Beginner",
+      "video": "https://example.com/face-pulls"
+    },
+    {
+      "name": "Upright Rows",
+      "equipment": "Barbell",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/upright-rows"
+    }
+  ],
+  "arms": [
+    {
+      "name": "Barbell Curl",
+      "equipment": "Barbell",
+      "difficulty": "Beginner",
+      "video": "https://example.com/bicep-curl"
+    },
+    {
+      "name": "Tricep Dips",
+      "equipment": "Bodyweight",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/tricep-dips"
+    },
+    {
+      "name": "Hammer Curls",
+      "equipment": "Dumbbells",
+      "difficulty": "Beginner",
+      "video": "https://example.com/hammer-curls"
+    },
+    {
+      "name": "Tricep Pushdown",
+      "equipment": "Cable",
+      "difficulty": "Beginner",
+      "video": "https://example.com/tricep-pushdown"
+    },
+    {
+      "name": "Skull Crushers",
+      "equipment": "Barbell",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/skull-crushers"
+    },
+    {
+      "name": "Preacher Curls",
+      "equipment": "Machine",
+      "difficulty": "Beginner",
+      "video": "https://example.com/preacher-curls"
+    }
+  ],
+  "core": [
+    {
+      "name": "Plank",
+      "equipment": "Bodyweight",
+      "difficulty": "Beginner",
+      "video": "https://example.com/plank"
+    },
+    {
+      "name": "Crunches",
+      "equipment": "Bodyweight",
+      "difficulty": "Beginner",
+      "video": "https://example.com/crunches"
+    },
+    {
+      "name": "Hanging Leg Raises",
+      "equipment": "Bodyweight",
+      "difficulty": "Intermediate",
+      "video": "https://example.com/leg-raises"
+    },
+    {
+      "name": "Russian Twists",
+      "equipment": "Bodyweight",
+      "difficulty": "Beginner",
+      "video": "https://example.com/russian-twists"
+    },
+    {
+      "name": "Cable Crunches",
+      "equipment": "Cable",
+      "difficulty": "Beginner",
+      "video": "https://example.com/cable-crunches"
+    }
+  ]
+}
