@@ -1,6 +1,5 @@
-// src/components/Tabs.tsx
-import React from 'react';
-import { useProgram } from '../context/ProgramContext';
+import React from "react";
+import { useProgram } from "../context/ProgramContext";
 
 const Tabs: React.FC = () => {
   const { activeTab, setActiveTab } = useProgram();
@@ -8,22 +7,22 @@ const Tabs: React.FC = () => {
   return (
     <div className="tabs">
       <div
-        className={`tab ${activeTab === 'program' ? 'active' : ''}`}
-        onClick={() => setActiveTab('program')}
+        className={`tab ${activeTab === "program" ? "active" : ""}`}
+        onClick={() => setActiveTab("program")}
       >
-        Program Builder
+        سازنده برنامه
       </div>
       <div
-        className={`tab ${activeTab === 'exercises' ? 'active' : ''}`}
-        onClick={() => setActiveTab('exercises')}
+        className={`tab ${activeTab === "exercises" ? "active" : ""}`}
+        onClick={() => setActiveTab("exercises")}
       >
-        Exercises
+        تمرینات
       </div>
       <div
-        className={`tab ${activeTab === 'settings' ? 'active' : ''}`}
-        onClick={() => setActiveTab('settings')}
+        className={`tab ${activeTab === "settings" ? "active" : ""}`}
+        onClick={() => setActiveTab("settings")}
       >
-        Settings
+        تنظیمات
       </div>
     </div>
   );

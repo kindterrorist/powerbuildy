@@ -21,18 +21,18 @@ const PreviewModal: React.FC = () => {
           <div key="empty" className="empty-state">
             <FontAwesomeIcon icon="calendar-times" />
             &nbsp; {/* Use the component */}
-            <h3>No Days in Program</h3>
-            <p>Add at least one day to preview your program.</p>
+            <h3>هیچ روزی در برنامه نیست</h3>
+            <p>برای پیش نمایش برنامه خود، حداقل یک روز اضافه کنید.</p>
           </div>
         );
       } else {
         // Add program info card
         content.push(
           <div key="info" className="detail-card">
-            <div className="label">Program Name</div>
-            <div className="value">{program.name || "Untitled Program"}</div>
-            <div className="label">Duration</div>
-            <div className="value">{program.weeks} weeks</div>
+            <div className="label">نام برنامه</div>
+            <div className="value">{program.name || "برنامه بدون نام"}</div>
+            <div className="label">مدت زمان</div>
+            <div className="value">{program.weeks} هفته</div>
           </div>
         );
 
@@ -44,11 +44,11 @@ const PreviewModal: React.FC = () => {
           );
           content.push(
             <div key={day.id} className="detail-card">
-              <div className="label">Day</div>
+              <div className="label">روز</div>
               <div className="value">{day.name}</div>
-              <div className="label">Exercises</div>
+              <div className="label">تمرینات</div>
               <div className="value">{day.exercises.length}</div>
-              <div className="label">Total Sets</div>
+              <div className="label">مجموع ست ها</div>
               <div className="value">{totalSets}</div>
             </div>
           );
@@ -73,27 +73,29 @@ const PreviewModal: React.FC = () => {
     const traineeInfo = `
                 <div class="trainee-info">
                     <div class="trainee-detail">
-                        <span>Name:</span>
+                        <span>نام:</span>
                         <span>${program.trainee.name || "N/A"}</span>
                     </div>
                     <div class="trainee-detail">
-                        <span>Age:</span>
-                        <span>${program.trainee.age || "N/A"} years</span>
+                        <span>سن:</span>
+                        <span>${program.trainee.age || "N/A"} سال</span>
                     </div>
                     <div class="trainee-detail">
-                        <span>Weight:</span>
-                        <span>${program.trainee.weight || "N/A"} kg</span>
+                        <span>وزن:</span>
+                        <span>${program.trainee.weight || "N/A"} کیلوگرم</span>
                     </div>
                     <div class="trainee-detail">
-                        <span>Height:</span>
-                        <span>${program.trainee.height || "N/A"} cm</span>
+                        <span>قد:</span>
+                        <span>${
+                          program.trainee.height || "N/A"
+                        } سانتی متر</span>
                     </div>
                 </div>
             `;
     const programDescriptionHtml = program.description
       ? `
                 <div class="program-description">
-                    <h3>Program Description</h3>
+                    <h3>توضیحات برنامه</h3>
                     <p>${program.description}</p>
                 </div>
             `
@@ -101,19 +103,19 @@ const PreviewModal: React.FC = () => {
     const trainerInfo = `
                 <div class="trainer-info">
                     <div class="trainer-detail" style="grid-column: 1 / -1;">
-                        <span>Bio:</span>
+                        <span>بیو:</span>
                         <span>${program.trainer.bio || "N/A"}</span>
                     </div>
                     <div class="trainer-detail">
-                        <span>Trainer:</span>
+                        <span>مربی:</span>
                         <span>${program.trainer.name || "N/A"}</span>
                     </div>
                     <div class="trainer-detail">
-                        <span>Contact:</span>
+                        <span>تماس:</span>
                         <span>${program.trainer.contact || "N/A"}</span>
                     </div>
                     <div class="trainer-detail">
-                        <span>Email:</span>
+                        <span>ایمیل:</span>
                         <span>${program.trainer.email || "N/A"}</span>
                     </div>
                 </div>
@@ -132,21 +134,21 @@ const PreviewModal: React.FC = () => {
                                     ${ex.name}
                                     ${
                                       ex.video
-                                        ? `<a href="${ex.video}" target="_blank" class="tutorial-link">Tutorial</a>`
+                                        ? `<a href="${ex.video}" target="_blank" class="tutorial-link">آموزش</a>`
                                         : ""
                                     }
                                 </div>
                                 <div class="exercise-detail">
-                                    <span>SETS</span>
+                                    <span>ست</span>
                                     ${ex.sets}
                                 </div>
                                 <div class="exercise-detail">
-                                    <span>REPS</span>
+                                    <span>تکرار</span>
                                     ${ex.reps}
                                 </div>
                                 <div class="exercise-detail">
-                                    <span>REST</span>
-                                    ${ex.rest}s
+                                    <span>استراحت</span>
+                                    ${ex.rest} ثانیه
                                 </div>
                             </div>
                         `
@@ -364,7 +366,7 @@ const PreviewModal: React.FC = () => {
                 }</h1>
                 <div class="program-info">${
                   program.weeks
-                } Week Program | Created ${today}</div>
+                } هفته برنامه | ایجاد شده ${today}</div>
             </div>
             ${traineeInfo}
             <div class="content">
@@ -373,8 +375,8 @@ const PreviewModal: React.FC = () => {
             ${programDescriptionHtml}
             ${trainerInfo}
             <div class="footer">
-                <strong>YOUR GYM NAME</strong> | Follow us @yourgym<br>
-                Remember: Progressive overload is key! Track your weights and increase gradually.
+                <strong>نام باشگاه شما</strong> | ما را در @yourgym دنبال کنید<br>
+                به یاد داشته باشید: افزایش تدریجی بار بسیار مهم است! وزن ها را ثبت کنید و به تدریج افزایش دهید.
             </div>
         </div>
     </body>
@@ -382,12 +384,12 @@ const PreviewModal: React.FC = () => {
 
     if (program.days.length === 0) {
       showNotification(
-        "Cannot download an empty program. Add at least one day."
+        "نمی توان یک برنامه خالی را دانلود کرد. حداقل یک روز اضافه کنید."
       );
       return;
     }
     if (!program.name.trim()) {
-      showNotification("Please enter a program name before downloading.");
+      showNotification("لطفاً قبل از دانلود یک نام برنامه وارد کنید.");
       return;
     }
 
@@ -402,7 +404,7 @@ const PreviewModal: React.FC = () => {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    showNotification("Program downloaded successfully!");
+    showNotification("برنامه با موفقیت دانلود شد!");
   };
 
   if (!isPreviewModalOpen) return null;
@@ -411,7 +413,7 @@ const PreviewModal: React.FC = () => {
     <div className="modal" style={{ display: "flex" }}>
       <div className="modal-content">
         <div className="modal-header">
-          <h2>Program Preview</h2>
+          <h2>پیش نمایش برنامه</h2>
           <button
             className="close-modal"
             onClick={() => setIsPreviewModalOpen(false)}
@@ -429,7 +431,7 @@ const PreviewModal: React.FC = () => {
             className="btn btn-secondary"
             onClick={() => setIsPreviewModalOpen(false)}
           >
-            Close
+            بستن
           </button>
           <button
             className="btn btn-success"
@@ -438,7 +440,7 @@ const PreviewModal: React.FC = () => {
           >
             <FontAwesomeIcon icon="download" />
             &nbsp; {/* Use the component */}
-            Download HTML
+            دانلود HTML
           </button>
         </div>
       </div>

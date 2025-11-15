@@ -1,4 +1,3 @@
-// src/components/ProgramBuilderTab.tsx
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the component
 import { useProgram } from "../context/ProgramContext";
@@ -39,7 +38,7 @@ const ProgramBuilderTab: React.FC = () => {
     const newDayId = Date.now();
     const newDay: Day = {
       id: newDayId,
-      name: `Day ${program.days.length + 1}`,
+      name: `روز ${program.days.length + 1}`,
       exercises: [],
     };
     setProgram((prev) => ({
@@ -47,13 +46,13 @@ const ProgramBuilderTab: React.FC = () => {
       days: [...prev.days, newDay],
       currentDayId: newDayId,
     }));
-    showNotification("Day added successfully!");
+    showNotification("روز با موفقیت اضافه شد!");
   };
 
   // Handle deleting a day
   const handleDeleteDay = (dayId: number) => {
     if (program.days.length <= 1) {
-      showNotification("Cannot delete the last day.");
+      showNotification("نمی توان آخرین روز را حذف کرد.");
       return;
     }
     setProgram((prev) => {
@@ -70,7 +69,7 @@ const ProgramBuilderTab: React.FC = () => {
       setCurrentExerciseId(null);
       setIsFormVisible(false);
     }
-    showNotification("Day deleted successfully!");
+    showNotification("روز با موفقیت حذف شد!");
   };
 
   // Handle changing day name
@@ -121,7 +120,7 @@ const ProgramBuilderTab: React.FC = () => {
     });
 
     setDraggedDayId(null);
-    showNotification("Days reordered successfully!");
+    showNotification("روزها با موفقیت تغییر ترتیب داده شدند!");
   };
 
   // Handle selecting a day
@@ -134,7 +133,7 @@ const ProgramBuilderTab: React.FC = () => {
   // Handle adding an exercise to the current day
   const handleAddExercise = (exerciseName: string) => {
     if (!program.currentDayId) {
-      showNotification("Please select a day first!");
+      showNotification("لطفاً ابتدا یک روز را انتخاب کنید!");
       return;
     }
 
@@ -155,7 +154,7 @@ const ProgramBuilderTab: React.FC = () => {
           : day
       ),
     }));
-    showNotification("Exercise added successfully!");
+    showNotification("تمرین با موفقیت اضافه شد!");
   };
 
   // Handle editing an exercise
@@ -192,7 +191,7 @@ const ProgramBuilderTab: React.FC = () => {
       setCurrentExerciseId(null);
       setIsFormVisible(false);
     }
-    showNotification("Exercise deleted successfully!");
+    showNotification("تمرین با موفقیت حذف شد!");
   };
 
   // Handle updating exercise details from form
@@ -218,7 +217,7 @@ const ProgramBuilderTab: React.FC = () => {
         return day;
       }),
     }));
-    showNotification("Exercise updated successfully!");
+    showNotification("تمرین با موفقیت به روز شد!");
     // Optionally hide form after saving
     // setIsFormVisible(false);
     // setCurrentExerciseId(null);
@@ -275,7 +274,7 @@ const ProgramBuilderTab: React.FC = () => {
                 <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                     <h2>${
                       muscleGroup.charAt(0).toUpperCase() + muscleGroup.slice(1)
-                    } Exercises</h2>
+                    } تمرینات</h2>
                     <button class="close-modal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
                 </div>
                 <div class="modal-body exercise-list-modal" style="max-height: 400px; overflow-y: auto;">
@@ -288,7 +287,7 @@ const ProgramBuilderTab: React.FC = () => {
                                     <div class="exercise-name">${ex.name}</div>
                                     <div style="font-size: 0.8rem; color: #95a5a6;">${ex.equipment} | ${ex.difficulty}</div>
                                 </div>
-                                <button class="btn btn-primary add-exercise-btn" data-exercise-name="${ex.name}" style="padding: 5px 10px;">Add</button>
+                                <button class="btn btn-primary add-exercise-btn" data-exercise-name="${ex.name}" style="padding: 5px 10px;">اضافه کردن</button>
                             </div>
                         `
                           )
@@ -318,7 +317,7 @@ const ProgramBuilderTab: React.FC = () => {
   const handlePreviewClick = () => {
     if (program.days.length === 0) {
       showNotification(
-        "Cannot preview an empty program. Add at least one day."
+        "نمی توان یک برنامه خالی را پیش نمایش داد. حداقل یک روز اضافه کنید."
       );
       return;
     }
@@ -329,12 +328,12 @@ const ProgramBuilderTab: React.FC = () => {
   const handleDownloadClick = () => {
     if (program.days.length === 0) {
       showNotification(
-        "Cannot download an empty program. Add at least one day."
+        "نمی توان یک برنامه خالی را دانلود کرد. حداقل یک روز اضافه کنید."
       );
       return;
     }
     if (!program.name.trim()) {
-      showNotification("Please enter a program name before downloading.");
+      showNotification("لطفاً قبل از دانلود یک نام برنامه وارد کنید.");
       return;
     }
 
@@ -349,27 +348,29 @@ const ProgramBuilderTab: React.FC = () => {
     const traineeInfo = `
                 <div class="trainee-info">
                     <div class="trainee-detail">
-                        <span>Name:</span>
+                        <span>نام:</span>
                         <span>${program.trainee.name || "N/A"}</span>
                     </div>
                     <div class="trainee-detail">
-                        <span>Age:</span>
-                        <span>${program.trainee.age || "N/A"} years</span>
+                        <span>سن:</span>
+                        <span>${program.trainee.age || "N/A"} سال</span>
                     </div>
                     <div class="trainee-detail">
-                        <span>Weight:</span>
-                        <span>${program.trainee.weight || "N/A"} kg</span>
+                        <span>وزن:</span>
+                        <span>${program.trainee.weight || "N/A"} کیلوگرم</span>
                     </div>
                     <div class="trainee-detail">
-                        <span>Height:</span>
-                        <span>${program.trainee.height || "N/A"} cm</span>
+                        <span>قد:</span>
+                        <span>${
+                          program.trainee.height || "N/A"
+                        } سانتی متر</span>
                     </div>
                 </div>
             `;
     const programDescriptionHtml = program.description
       ? `
                 <div class="program-description">
-                    <h3>Program Description</h3>
+                    <h3>توضیحات برنامه</h3>
                     <p>${program.description}</p>
                 </div>
             `
@@ -377,19 +378,19 @@ const ProgramBuilderTab: React.FC = () => {
     const trainerInfo = `
                 <div class="trainer-info">
                     <div class="trainer-detail" style="grid-column: 1 / -1;">
-                        <span>Bio:</span>
+                        <span>بیو:</span>
                         <span>${program.trainer.bio || "N/A"}</span>
                     </div>
                     <div class="trainer-detail">
-                        <span>Trainer:</span>
+                        <span>مربی:</span>
                         <span>${program.trainer.name || "N/A"}</span>
                     </div>
                     <div class="trainer-detail">
-                        <span>Contact:</span>
+                        <span>تماس:</span>
                         <span>${program.trainer.contact || "N/A"}</span>
                     </div>
                     <div class="trainer-detail">
-                        <span>Email:</span>
+                        <span>ایمیل:</span>
                         <span>${program.trainer.email || "N/A"}</span>
                     </div>
                 </div>
@@ -408,21 +409,21 @@ const ProgramBuilderTab: React.FC = () => {
                                     ${ex.name}
                                     ${
                                       ex.video
-                                        ? `<a href="${ex.video}" target="_blank" class="tutorial-link">Tutorial</a>`
+                                        ? `<a href="${ex.video}" target="_blank" class="tutorial-link">آموزش</a>`
                                         : ""
                                     }
                                 </div>
                                 <div class="exercise-detail">
-                                    <span>SETS</span>
+                                    <span>ست</span>
                                     ${ex.sets}
                                 </div>
                                 <div class="exercise-detail">
-                                    <span>REPS</span>
+                                    <span>تکرار</span>
                                     ${ex.reps}
                                 </div>
                                 <div class="exercise-detail">
-                                    <span>REST</span>
-                                    ${ex.rest}s
+                                    <span>استراحت</span>
+                                    ${ex.rest} ثانیه
                                 </div>
                             </div>
                         `
@@ -640,7 +641,7 @@ const ProgramBuilderTab: React.FC = () => {
                 }</h1>
                 <div class="program-info">${
                   program.weeks
-                } Week Program | Created ${today}</div>
+                } هفته برنامه | ایجاد شده ${today}</div>
             </div>
             ${traineeInfo}
             <div class="content">
@@ -649,8 +650,8 @@ const ProgramBuilderTab: React.FC = () => {
             ${programDescriptionHtml}
             ${trainerInfo}
             <div class="footer">
-                <strong>YOUR GYM NAME</strong> | Follow us @yourgym<br>
-                Remember: Progressive overload is key! Track your weights and increase gradually.
+                <strong>METAL FIT</strong> | ما را در @metalfit دنبال کنید<br>
+                به یاد داشته باشید: افزایش تدریجی وزنه بسیار مهم است! وزن ها را ثبت کنید و به تدریج افزایش دهید.
             </div>
         </div>
     </body>
@@ -667,7 +668,7 @@ const ProgramBuilderTab: React.FC = () => {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    showNotification("Program downloaded successfully!");
+    showNotification("برنامه با موفقیت دانلود شد!");
   };
 
   // Determine if buttons should be disabled
@@ -678,18 +679,18 @@ const ProgramBuilderTab: React.FC = () => {
     <div className="program-info-and-main">
       <div className="program-info">
         <div className="form-group">
-          <label htmlFor="name">Program Name</label>
+          <label htmlFor="name">نام برنامه</label>
           <input
             type="text"
             id="name"
             className="form-control"
             value={program.name}
             onChange={handleProgramInfoChange}
-            placeholder="e.g., Push/Pull/Legs Split"
+            placeholder="مثلاً: پوش/پول/پا"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="weeks">Duration (Weeks)</label>
+          <label htmlFor="weeks">مدت زمان (هفته)</label>
           <input
             type="number"
             id="weeks"
@@ -705,52 +706,52 @@ const ProgramBuilderTab: React.FC = () => {
       <div className="trainee-info-section">
         <h3>
           <FontAwesomeIcon icon="user" />
-          &nbsp; Trainee Information
+          &nbsp; اطلاعات ورزشکار
         </h3>{" "}
         {/* Use the component */}
         <div className="trainee-info-grid">
           <div className="trainee-info-item">
-            <label htmlFor="traineeName">Name</label>
+            <label htmlFor="traineeName">نام</label>
             <input
               type="text"
               id="traineeName"
               className="form-control"
               value={program.trainee.name}
               onChange={handleTraineeInfoChange}
-              placeholder="Enter trainee name"
+              placeholder="نام ورزشکار را وارد کنید"
             />
           </div>
           <div className="trainee-info-item">
-            <label htmlFor="traineeAge">Age</label>
+            <label htmlFor="traineeAge">سن</label>
             <input
               type="number"
               id="traineeAge"
               className="form-control"
               value={program.trainee.age}
               onChange={handleTraineeInfoChange}
-              placeholder="Enter age"
+              placeholder="سن را وارد کنید"
             />
           </div>
           <div className="trainee-info-item">
-            <label htmlFor="traineeWeight">Weight (kg)</label>
+            <label htmlFor="traineeWeight">وزن (کیلوگرم)</label>
             <input
               type="number"
               id="traineeWeight"
               className="form-control"
               value={program.trainee.weight}
               onChange={handleTraineeInfoChange}
-              placeholder="Enter weight"
+              placeholder="وزن را وارد کنید"
             />
           </div>
           <div className="trainee-info-item">
-            <label htmlFor="traineeHeight">Height (cm)</label>
+            <label htmlFor="traineeHeight">قد (سانتی متر)</label>
             <input
               type="number"
               id="traineeHeight"
               className="form-control"
               value={program.trainee.height}
               onChange={handleTraineeInfoChange}
-              placeholder="Enter height"
+              placeholder="قد را وارد کنید"
             />
           </div>
         </div>
@@ -759,7 +760,7 @@ const ProgramBuilderTab: React.FC = () => {
       <div className="program-description-section">
         <h3>
           <FontAwesomeIcon icon="file-alt" />
-          &nbsp; Program Description
+          &nbsp; توضیحات برنامه
         </h3>{" "}
         {/* Use the component */}
         <textarea
@@ -767,7 +768,7 @@ const ProgramBuilderTab: React.FC = () => {
           className="form-control"
           value={program.description}
           onChange={handleProgramInfoChange}
-          placeholder="Enter program description, instructions, or additional details here..."
+          placeholder="توضیحات، دستورالعمل ها یا جزئیات اضافی برنامه را اینجا وارد کنید..."
         ></textarea>
       </div>
 
@@ -776,13 +777,13 @@ const ProgramBuilderTab: React.FC = () => {
           <div className="panel-title">
             <h2>
               <FontAwesomeIcon icon="calendar-day" />
-              &nbsp; Training Days
+              &nbsp; روزهای تمرینی
             </h2>{" "}
             {/* Use the component */}
             <button className="btn btn-primary" onClick={handleAddDay}>
               <FontAwesomeIcon icon="plus" />
               &nbsp; {/* Use the component */}
-              Add Day
+              اضافه کردن روز
             </button>
           </div>
           <div className="days-container" id="daysContainer">
@@ -790,8 +791,10 @@ const ProgramBuilderTab: React.FC = () => {
               <div className="empty-state" id="daysEmptyState">
                 <FontAwesomeIcon icon="calendar-plus" />
                 &nbsp; {/* Use the component */}
-                <h3>No Training Days Yet</h3>
-                <p>Click "Add Day" to start building your program!</p>
+                <h3>هنوز روز تمرینی وجود ندارد</h3>
+                <p>
+                  برای شروع ساخت برنامه، دکمه "اضافه کردن روز" را کلیک کنید!
+                </p>
               </div>
             ) : (
               program.days.map((day) => (
@@ -840,12 +843,12 @@ const ProgramBuilderTab: React.FC = () => {
                         (sum, ex) => sum + (parseInt(ex.sets) || 0),
                         0
                       )}{" "}
-                      sets
+                      ست
                     </span>
                     <span>
                       <FontAwesomeIcon icon="list" />
                       &nbsp; {/* Use the component */}
-                      {day.exercises.length} exercises
+                      {day.exercises.length} تمرین
                     </span>
                   </div>
                 </div>
@@ -860,23 +863,23 @@ const ProgramBuilderTab: React.FC = () => {
               <h2>
                 <FontAwesomeIcon icon="dumbbell" />
                 &nbsp; {/* Use the component */}
-                {currentDay ? currentDay.name : "Select a Day"}
+                {currentDay ? currentDay.name : "یک روز را انتخاب کنید"}
               </h2>
               <div className="day-stats">
                 <span>
                   <FontAwesomeIcon icon="dumbbell" />
-                  &nbsp; <span id="daySets">{daySets}</span> sets
+                  &nbsp; <span id="daySets">{daySets}</span> ست
                 </span>{" "}
                 {/* Use the component */}
                 <span>
                   <FontAwesomeIcon icon="list" />
-                  &nbsp; <span id="dayExercises">{dayExercises}</span> exercises
+                  &nbsp; <span id="dayExercises">{dayExercises}</span> تمرین
                 </span>{" "}
                 {/* Use the component */}
               </div>
             </div>
             <div className="exercise-db">
-              <h3>Add Exercises</h3>
+              <h3>اضافه کردن تمرینات</h3>
               <div className="muscle-groups" id="muscleGroups">
                 {Object.keys(exerciseDatabase).map((mg) => (
                   <div
@@ -892,14 +895,14 @@ const ProgramBuilderTab: React.FC = () => {
               </div>
             </div>
             <div className="selected-exercises">
-              <h3>Selected Exercises</h3>
+              <h3>تمرینات انتخاب شده</h3>
               <div id="selectedExercisesContainer">
                 {currentDay && currentDay.exercises.length === 0 ? (
                   <div className="empty-state" id="exercisesEmptyState">
                     <FontAwesomeIcon icon="dumbbell" />
                     &nbsp; {/* Use the component */}
-                    <h3>No Exercises Added Yet</h3>
-                    <p>Select exercises from the categories above.</p>
+                    <h3>هنوز تمرینی اضافه نشده است</h3>
+                    <p>تمرینات را از دسته های بالا انتخاب کنید.</p>
                   </div>
                 ) : (
                   <div className="exercise-list">
@@ -908,13 +911,13 @@ const ProgramBuilderTab: React.FC = () => {
                         <div className="exercise-name">{exercise.name}</div>
                         <div className="exercise-details">
                           <div className="exercise-detail">
-                            Sets: {exercise.sets}
+                            ست: {exercise.sets}
                           </div>
                           <div className="exercise-detail">
-                            Reps: {exercise.reps}
+                            تکرار: {exercise.reps}
                           </div>
                           <div className="exercise-detail">
-                            Rest: {exercise.rest}s
+                            استراحت: {exercise.rest} ثانیه
                           </div>
                         </div>
                         <div className="exercise-actions">
@@ -945,10 +948,10 @@ const ProgramBuilderTab: React.FC = () => {
                 id="exerciseForm"
                 style={{ display: "block" }}
               >
-                <h3>Edit Exercise</h3>
+                <h3>ویرایش تمرین</h3>
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="sets">Sets</label>
+                    <label htmlFor="sets">ست</label>
                     <input
                       type="number"
                       id="sets"
@@ -960,7 +963,7 @@ const ProgramBuilderTab: React.FC = () => {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="reps">Reps</label>
+                    <label htmlFor="reps">تکرار</label>
                     <input
                       type="number"
                       id="reps"
@@ -972,7 +975,7 @@ const ProgramBuilderTab: React.FC = () => {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="rest">Rest (s)</label>
+                    <label htmlFor="rest">استراحت (ثانیه)</label>
                     <input
                       type="number"
                       id="rest"
@@ -984,7 +987,7 @@ const ProgramBuilderTab: React.FC = () => {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="video">Tutorial Video URL</label>
+                    <label htmlFor="video">آدرس ویدیو آموزشی</label>
                     <input
                       type="text"
                       id="video"
@@ -997,41 +1000,41 @@ const ProgramBuilderTab: React.FC = () => {
                   </div>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="equipment">Equipment (from DB)</label>
+                  <label htmlFor="equipment">تجهیزات (از پایگاه داده)</label>
                   <input
                     type="text"
                     id="equipment"
                     className="form-control"
                     value={(() => {
-                      if (!currentDay) return "Unknown";
+                      if (!currentDay) return "ناشناخته";
                       const ex = currentDay.exercises.find(
                         (e) => e.id === currentExerciseId
                       );
-                      if (!ex) return "Unknown";
+                      if (!ex) return "ناشناخته";
                       const dbEntry = Object.values(exerciseDatabase)
                         .flat()
                         .find((dbEx) => dbEx.name === ex.name);
-                      return dbEntry ? dbEntry.equipment : "Unknown";
+                      return dbEntry ? dbEntry.equipment : "ناشناخته";
                     })()}
                     readOnly
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="difficulty">Difficulty (from DB)</label>
+                  <label htmlFor="difficulty">سختی (از پایگاه داده)</label>
                   <input
                     type="text"
                     id="difficulty"
                     className="form-control"
                     value={(() => {
-                      if (!currentDay) return "Unknown";
+                      if (!currentDay) return "ناشناخته";
                       const ex = currentDay.exercises.find(
                         (e) => e.id === currentExerciseId
                       );
-                      if (!ex) return "Unknown";
+                      if (!ex) return "ناشناخته";
                       const dbEntry = Object.values(exerciseDatabase)
                         .flat()
                         .find((dbEx) => dbEx.name === ex.name);
-                      return dbEntry ? dbEntry.difficulty : "Unknown";
+                      return dbEntry ? dbEntry.difficulty : "ناشناخته";
                     })()}
                     readOnly
                   />
@@ -1039,7 +1042,7 @@ const ProgramBuilderTab: React.FC = () => {
                 <button className="btn btn-success" onClick={handleFormSubmit}>
                   <FontAwesomeIcon icon="save" />
                   &nbsp; {/* Use the component */}
-                  Save Changes
+                  ذخیره تغییرات
                 </button>
               </div>
             )}
@@ -1057,7 +1060,7 @@ const ProgramBuilderTab: React.FC = () => {
         >
           <FontAwesomeIcon icon="eye" />
           &nbsp; {/* Use the component */}
-          Preview
+          پیش نمایش
         </button>
         <button
           className="btn btn-success"
@@ -1067,7 +1070,7 @@ const ProgramBuilderTab: React.FC = () => {
         >
           <FontAwesomeIcon icon="download" />
           &nbsp; {/* Use the component */}
-          Download HTML Poster
+          دانلود HTML
         </button>
       </div>
     </div>

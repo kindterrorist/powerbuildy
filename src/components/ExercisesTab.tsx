@@ -1,4 +1,3 @@
-// src/components/ExercisesTab.tsx
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the component
 import { useProgram } from "../context/ProgramContext";
@@ -21,25 +20,25 @@ const ExercisesTab: React.FC = () => {
   // Handle adding a new muscle group
   const handleAddMuscleGroup = () => {
     if (!newGroupName.trim()) {
-      showNotification("Please enter a muscle group name");
+      showNotification("لطفاً نام یک دسته عضلانی وارد کنید");
       return;
     }
     if (exerciseDatabase[newGroupName]) {
       showNotification(
-        `A muscle group with the name "${newGroupName}" already exists!`
+        `یک دسته عضلانی با نام "${newGroupName}" از قبل وجود دارد!`
       );
       return;
     }
     setExerciseDatabase((prev) => ({ ...prev, [newGroupName]: [] }));
     setNewGroupName("");
-    showNotification(`Muscle group "${newGroupName}" added successfully!`);
+    showNotification(`دسته عضلانی "${newGroupName}" با موفقیت اضافه شد!`);
   };
 
   // Handle deleting a muscle group
   const handleDeleteMuscleGroup = (groupName: string) => {
     if (
       window.confirm(
-        `Are you sure you want to delete the "${groupName}" muscle group? All exercises in this group will be lost.`
+        `آیا مطمئن هستید که می خواهید دسته عضلانی "${groupName}" را حذف کنید؟ تمام تمرینات این دسته از بین خواهند رفت.`
       )
     ) {
       setExerciseDatabase((prev) => {
@@ -50,19 +49,19 @@ const ExercisesTab: React.FC = () => {
       if (currentMuscleGroup === groupName) {
         setCurrentMuscleGroup(null);
       }
-      showNotification(`Muscle group "${groupName}" deleted`);
+      showNotification(`دسته عضلانی "${groupName}" حذف شد`);
     }
   };
 
   // Handle adding a new exercise
   const handleAddExercise = () => {
     if (!currentMuscleGroup) {
-      showNotification("Please select a muscle group first!");
+      showNotification("لطفاً ابتدا یک دسته عضلانی انتخاب کنید!");
       return;
     }
     const { name, equipment, difficulty, video } = newExercise;
     if (!name || !equipment || !difficulty) {
-      showNotification("Please fill in all required fields for the exercise");
+      showNotification("لطفاً تمام فیلدهای الزامی تمرین را پر کنید");
       return;
     }
 
@@ -82,27 +81,30 @@ const ExercisesTab: React.FC = () => {
 
     setNewExercise({ name: "", equipment: "", difficulty: "", video: "" });
     setIsAddingExercise(false);
-    showNotification("Exercise added successfully!");
+    showNotification("تمرین با موفقیت اضافه شد!");
   };
 
   // Handle deleting an exercise
   const handleDeleteExercise = (groupName: string, index: number) => {
-    if (window.confirm("Are you sure you want to delete this exercise?")) {
+    if (window.confirm("آیا مطمئن هستید که می خواهید این تمرین را حذف کنید؟")) {
       setExerciseDatabase((prev) => ({
         ...prev,
         [groupName]: prev[groupName].filter((_, i) => i !== index),
       }));
-      showNotification("Exercise deleted successfully!");
+      showNotification("تمرین با موفقیت حذف شد!");
     }
   };
 
   // Handle editing an exercise (simplified, could use a form)
   const handleEditExercise = (groupName: string, index: number) => {
     const exercise = exerciseDatabase[groupName][index];
-    const newName = prompt("Edit exercise name:", exercise.name);
-    const newEquipment = prompt("Edit equipment:", exercise.equipment);
-    const newDifficulty = prompt("Edit difficulty:", exercise.difficulty);
-    const newVideo = prompt("Edit video URL (optional):", exercise.video || "");
+    const newName = prompt("ویرایش نام تمرین:", exercise.name);
+    const newEquipment = prompt("ویرایش تجهیزات:", exercise.equipment);
+    const newDifficulty = prompt("ویرایش سختی:", exercise.difficulty);
+    const newVideo = prompt(
+      "ویرایش آدرس ویدیو (اختیاری):",
+      exercise.video || ""
+    );
 
     if (newName !== null && newEquipment !== null && newDifficulty !== null) {
       setExerciseDatabase((prev) => {
@@ -115,14 +117,14 @@ const ExercisesTab: React.FC = () => {
         };
         return { ...prev, [groupName]: newGroupExercises };
       });
-      showNotification("Exercise updated successfully!");
+      showNotification("تمرین با موفقیت به روز شد!");
     }
   };
 
   return (
     <div className="exercise-management">
       <div className="muscle-group-list">
-        <h3>Muscle Groups</h3>
+        <h3>دسته های عضلانی</h3>
         <div id="muscleGroupList">
           {Object.keys(exerciseDatabase).map((groupName) => (
             <div
@@ -144,7 +146,7 @@ const ExercisesTab: React.FC = () => {
         <div className="muscle-group-manager">
           <h3>
             <FontAwesomeIcon icon="plus-circle" />
-            &nbsp; Manage Muscle Groups
+            &nbsp; مدیریت دسته های عضلانی
           </h3>{" "}
           {/* Use the component */}
           <div className="group-manager-form">
@@ -154,11 +156,11 @@ const ExercisesTab: React.FC = () => {
               className="form-control"
               value={newGroupName}
               onChange={(e) => setNewGroupName(e.target.value)}
-              placeholder="New muscle group name"
+              placeholder="نام دسته عضلانی جدید"
             />
-            <button onClick={handleAddMuscleGroup}>Add Group</button>
+            <button onClick={handleAddMuscleGroup}>اضافه کردن گروه</button>
           </div>
-          <h4>Existing Groups:</h4>
+          <h4>گروه های موجود:</h4>
           <div className="existing-groups" id="existingGroups">
             {Object.keys(exerciseDatabase).map((groupName) => (
               <div key={groupName} className="group-item">
@@ -185,8 +187,8 @@ const ExercisesTab: React.FC = () => {
             ? `${
                 currentMuscleGroup.charAt(0).toUpperCase() +
                 currentMuscleGroup.slice(1)
-              } Exercises`
-            : "Select a Muscle Group"}
+              } تمرینات`
+            : "یک دسته عضلانی را انتخاب کنید"}
           {currentMuscleGroup && (
             <button
               className="btn btn-primary"
@@ -194,7 +196,7 @@ const ExercisesTab: React.FC = () => {
             >
               <FontAwesomeIcon icon="plus" />
               &nbsp; {/* Use the component */}
-              Add Exercise
+              اضافه کردن تمرین
             </button>
           )}
         </h3>
@@ -203,15 +205,15 @@ const ExercisesTab: React.FC = () => {
             <div className="empty-state" id="exerciseListEmptyState">
               <FontAwesomeIcon icon="dumbbell" />
               &nbsp; {/* Use the component */}
-              <h3>No Muscle Group Selected</h3>
-              <p>Select a muscle group from the list to view exercises</p>
+              <h3>هیچ دسته عضلانی انتخاب نشده است</h3>
+              <p>برای مشاهده تمرینات، یک دسته عضلانی از لیست انتخاب کنید</p>
             </div>
           ) : exerciseDatabase[currentMuscleGroup].length === 0 ? (
             <div className="empty-state">
               <FontAwesomeIcon icon="dumbbell" />
               &nbsp; {/* Use the component */}
-              <h3>No Exercises Yet</h3>
-              <p>Add exercises to this muscle group</p>
+              <h3>هنوز تمرینی وجود ندارد</h3>
+              <p>به این دسته عضلانی تمرین اضافه کنید</p>
             </div>
           ) : (
             <div id="exerciseList">
@@ -224,11 +226,11 @@ const ExercisesTab: React.FC = () => {
                   <div className="exercise-info">
                     <h4>{ex.name}</h4>
                     <p>
-                      Equipment: {ex.equipment} | Difficulty: {ex.difficulty}
+                      تجهیزات: {ex.equipment} | سختی: {ex.difficulty}
                     </p>
                     {ex.video && (
                       <p>
-                        Video:{" "}
+                        ویدیو:{" "}
                         <a
                           href={ex.video}
                           target="_blank"
@@ -270,10 +272,10 @@ const ExercisesTab: React.FC = () => {
             id="addExerciseForm"
             style={{ display: "block" }}
           >
-            <h3>Add New Exercise</h3>
+            <h3>اضافه کردن تمرین جدید</h3>
             <div className="form-row-2col">
               <div className="form-group">
-                <label htmlFor="newExerciseName">Exercise Name</label>
+                <label htmlFor="newExerciseName">نام تمرین</label>
                 <input
                   type="text"
                   id="newExerciseName"
@@ -285,11 +287,11 @@ const ExercisesTab: React.FC = () => {
                       name: e.target.value,
                     }))
                   }
-                  placeholder="Exercise Name"
+                  placeholder="نام تمرین"
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="newExerciseEquipment">Equipment</label>
+                <label htmlFor="newExerciseEquipment">تجهیزات</label>
                 <input
                   type="text"
                   id="newExerciseEquipment"
@@ -301,11 +303,11 @@ const ExercisesTab: React.FC = () => {
                       equipment: e.target.value,
                     }))
                   }
-                  placeholder="Equipment"
+                  placeholder="تجهیزات"
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="newExerciseDifficulty">Difficulty</label>
+                <label htmlFor="newExerciseDifficulty">سختی</label>
                 <input
                   type="text"
                   id="newExerciseDifficulty"
@@ -317,11 +319,11 @@ const ExercisesTab: React.FC = () => {
                       difficulty: e.target.value,
                     }))
                   }
-                  placeholder="Difficulty"
+                  placeholder="سختی"
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="newExerciseVideo">Tutorial Video URL</label>
+                <label htmlFor="newExerciseVideo">آدرس ویدیو آموزشی</label>
                 <input
                   type="text"
                   id="newExerciseVideo"
@@ -344,13 +346,13 @@ const ExercisesTab: React.FC = () => {
             >
               <FontAwesomeIcon icon="save" />
               &nbsp; {/* Use the component */}
-              Save Exercise
+              ذخیره تمرین
             </button>
             <button
               className="btn btn-secondary"
               onClick={() => setIsAddingExercise(false)}
             >
-              Cancel
+              لغو
             </button>
           </div>
         )}

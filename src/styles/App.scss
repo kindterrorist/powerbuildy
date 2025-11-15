@@ -1,3 +1,8 @@
+// src/styles/App.scss
+
+// Import Vazirmatn font
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap");
+
 // ============================================
 // Variables & Theme Configuration
 // ============================================
@@ -47,12 +52,115 @@
 }
 
 body {
+  // Default LTR font
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   padding: var(--spacing-lg);
   color: var(--dark);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
+  direction: ltr; // Default direction
+  text-align: left; // Default alignment
+}
+
+// RTL Support
+.rtl {
+  // Set Vazirmatn as the primary font for RTL
+  font-family: "Vazirmatn", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  direction: rtl;
+  text-align: right;
+
+  // Mirror layout elements
+  .header-content {
+    flex-direction: row-reverse;
+  }
+
+  .header-right {
+    order: -1; // Move buttons to the left
+  }
+
+  .panel-title {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .day-header {
+    flex-direction: row-reverse;
+  }
+
+  .day-stats {
+    flex-direction: row-reverse;
+  }
+
+  .exercise-item {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .exercise-actions {
+    order: -1; // Move actions to the left
+  }
+
+  .exercise-list-item {
+    flex-direction: row-reverse;
+  }
+
+  .exercise-actions-ex {
+    order: -1; // Move actions to the left
+  }
+
+  .action-buttons {
+    flex-direction: row-reverse;
+  }
+
+  .tabs {
+    flex-direction: row;
+    justify-content: right;
+  }
+
+  .tab {
+    border-radius: 0 0 var(--radius-md) var(--radius-md); // Mirror tab shape
+  }
+
+  .tab.active {
+    border-radius: 0 0 var(--radius-md) var(--radius-md); // Mirror active tab shape
+  }
+
+  .form-row,
+  .form-row-2col,
+  .trainee-info-grid,
+  .exercise-details-grid,
+  .muscle-groups,
+  .existing-groups {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    ); // Grid direction is usually handled by CSS Grid itself
+    // For flex layouts, you might need flex-direction: row-reverse;
+  }
+
+  .modal-header {
+    flex-direction: row-reverse;
+  }
+
+  .modal-footer {
+    flex-direction: row-reverse;
+  }
+
+  .color-picker {
+    flex-direction: row-reverse;
+  }
+
+  .drag-handle {
+    margin-right: 0;
+    margin-left: var(--spacing-sm); // Swap margin
+  }
+
+  // Mirror specific icons or elements if needed
+  i {
+    // Example: Mirror icons that indicate direction if necessary
+    // transform: scaleX(-1);
+  }
 }
 
 .container {
@@ -313,7 +421,7 @@ header {
   border-radius: var(--radius-md);
   font-size: 1rem;
   transition: border-color var(--transition-normal);
-  font-family: inherit;
+  font-family: inherit; // Use the inherited font family (Vazirmatn in .rtl)
 
   &:focus {
     outline: none;
@@ -391,7 +499,7 @@ textarea.form-control {
     padding: var(--spacing-md);
     border-radius: var(--radius-md);
     border: 1px solid #ddd;
-    font-family: inherit;
+    font-family: inherit; // Use the inherited font family (Vazirmatn in .rtl)
     resize: vertical;
   }
 }
@@ -417,7 +525,7 @@ textarea.form-control {
     padding: var(--spacing-sm);
     border-radius: var(--radius-sm);
     border: 1px solid #ddd;
-    font-family: inherit;
+    font-family: inherit; // Use the inherited font family (Vazirmatn in .rtl)
     transition: border-color var(--transition-normal);
 
     &:focus {
@@ -509,13 +617,13 @@ textarea.form-control {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--accent); // Border side might need adjustment in RTL, but Vazirmatn is LTR-like for this purpose
   transition: all var(--transition-normal);
   animation: fadeIn 0.3s ease;
   gap: var(--spacing-sm);
 
   &:hover {
-    transform: translateX(5px);
+    transform: translateX(5px); // Or translateX(-5px) in RTL?
     box-shadow: var(--shadow-sm);
   }
 
@@ -788,6 +896,7 @@ textarea.form-control {
     padding: var(--spacing-sm);
     border-radius: var(--radius-sm);
     border: 1px solid #ddd;
+    font-family: inherit; // Use the inherited font family (Vazirmatn in .rtl)
   }
 
   button {
@@ -891,7 +1000,7 @@ textarea.form-control {
     padding: 12px;
     border: 2px solid #e0e6ed;
     border-radius: var(--radius-md);
-    font-family: monospace;
+    font-family: monospace; // Keep monospace for JSON
     resize: vertical;
   }
 

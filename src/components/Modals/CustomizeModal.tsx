@@ -56,7 +56,7 @@ const CustomizeModal: React.FC = () => {
     <div className="modal" style={{ display: "flex" }}>
       <div className="modal-content">
         <div className="modal-header">
-          <h2>Customize Your Program</h2>
+          <h2>سفارشی سازی برنامه شما</h2>
           <button
             className="close-modal"
             onClick={() => setIsCustomizeModalOpen(false)}
@@ -66,7 +66,7 @@ const CustomizeModal: React.FC = () => {
         </div>
         <div className="modal-body">
           <div className="form-group">
-            <label htmlFor="logoUpload">Upload Logo</label>
+            <label htmlFor="logoUpload">آپلود لوگو</label>
             <div className="logo-preview" id="logoPreview">
               {logoPreview ? (
                 <img src={logoPreview} alt="Logo Preview" />
@@ -85,7 +85,7 @@ const CustomizeModal: React.FC = () => {
             />
           </div>
           <div className="form-group">
-            <label>Accent Color</label>
+            <label>رنگ اصلی</label>
             <div className="color-picker">
               {colors.map((color) => (
                 <div
@@ -106,7 +106,7 @@ const CustomizeModal: React.FC = () => {
             className="btn btn-secondary"
             onClick={() => setIsCustomizeModalOpen(false)}
           >
-            Close
+            بستن
           </button>
         </div>
       </div>

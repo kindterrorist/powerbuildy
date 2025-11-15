@@ -1,229 +1,265 @@
 {
   "chest": [
     {
-      "name": "Barbell Bench Press",
-      "equipment": "Barbell",
-      "difficulty": "Intermediate",
+      "name": "فشار سینه با هالتر",
+      "originalName": "Barbell Bench Press",
+      "equipment": "هالتر",
+      "difficulty": "متوسط",
       "video": "https://example.com/bench"
     },
     {
-      "name": "Incline Dumbbell Press",
-      "equipment": "Dumbbells",
-      "difficulty": "Beginner",
+      "name": "پرس شانه با دمبل",
+      "originalName": "Incline Dumbbell Press",
+      "equipment": "دمبل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/incline"
     },
     {
-      "name": "Decline Bench Press",
-      "equipment": "Barbell",
-      "difficulty": "Intermediate",
+      "name": "پرس سینه با هالتر خمیده",
+      "originalName": "Decline Bench Press",
+      "equipment": "هالتر",
+      "difficulty": "متوسط",
       "video": "https://example.com/decline"
     },
     {
-      "name": "Cable Flyes",
-      "equipment": "Cable",
-      "difficulty": "Beginner",
+      "name": "پروانه کابل",
+      "originalName": "Cable Flyes",
+      "equipment": "کابل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/cable-fly"
     },
     {
-      "name": "Dumbbell Flyes",
-      "equipment": "Dumbbells",
-      "difficulty": "Beginner",
+      "name": "پروانه دمبل",
+      "originalName": "Dumbbell Flyes",
+      "equipment": "دمبل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/flyes"
     },
     {
-      "name": "Push-ups",
-      "equipment": "Bodyweight",
-      "difficulty": "Beginner",
+      "name": "شنا سوئدی",
+      "originalName": "Push-ups",
+      "equipment": "وزن بدن",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/pushups"
     }
   ],
   "back": [
     {
-      "name": "Deadlift",
-      "equipment": "Barbell",
-      "difficulty": "Advanced",
+      "name": "کشش از زمین",
+      "originalName": "Deadlift",
+      "equipment": "هالتر",
+      "difficulty": "پیشرفته",
       "video": "https://example.com/deadlift"
     },
     {
-      "name": "Pull-ups",
-      "equipment": "Bodyweight",
-      "difficulty": "Intermediate",
+      "name": "کشش زیربغل",
+      "originalName": "Pull-ups",
+      "equipment": "وزن بدن",
+      "difficulty": "متوسط",
       "video": "https://example.com/pullups"
     },
     {
-      "name": "Barbell Rows",
-      "equipment": "Barbell",
-      "difficulty": "Intermediate",
+      "name": "کشش هالتر",
+      "originalName": "Barbell Rows",
+      "equipment": "هالتر",
+      "difficulty": "متوسط",
       "video": "https://example.com/rows"
     },
     {
-      "name": "Lat Pulldown",
-      "equipment": "Cable",
-      "difficulty": "Beginner",
+      "name": "کشش زیربغل دستگاه",
+      "originalName": "Lat Pulldown",
+      "equipment": "کابل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/lat-pulldown"
     },
     {
-      "name": "T-Bar Rows",
-      "equipment": "Machine",
-      "difficulty": "Intermediate",
+      "name": "کشش T-Bar",
+      "originalName": "T-Bar Rows",
+      "equipment": "دستگاه",
+      "difficulty": "متوسط",
       "video": "https://example.com/tbar"
     },
     {
-      "name": "Seated Cable Rows",
-      "equipment": "Cable",
-      "difficulty": "Beginner",
+      "name": "کشش نشسته کابل",
+      "originalName": "Seated Cable Rows",
+      "equipment": "کابل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/seated-rows"
     }
   ],
   "legs": [
     {
-      "name": "Barbell Squats",
-      "equipment": "Barbell",
-      "difficulty": "Intermediate",
+      "name": "اسکوات با هالتر",
+      "originalName": "Barbell Squats",
+      "equipment": "هالتر",
+      "difficulty": "متوسط",
       "video": "https://example.com/squats"
     },
     {
-      "name": "Leg Press",
-      "equipment": "Machine",
-      "difficulty": "Beginner",
+      "name": "پرس پا",
+      "originalName": "Leg Press",
+      "equipment": "دستگاه",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/leg-press"
     },
     {
-      "name": "Romanian Deadlift",
-      "equipment": "Barbell",
-      "difficulty": "Intermediate",
+      "name": "کشش رومینیایی",
+      "originalName": "Romanian Deadlift",
+      "equipment": "هالتر",
+      "difficulty": "متوسط",
       "video": "https://example.com/rdl"
     },
     {
-      "name": "Leg Curls",
-      "equipment": "Machine",
-      "difficulty": "Beginner",
+      "name": "پیچش پا",
+      "originalName": "Leg Curls",
+      "equipment": "دستگاه",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/leg-curls"
     },
     {
-      "name": "Leg Extensions",
-      "equipment": "Machine",
-      "difficulty": "Beginner",
+      "name": "ارتد پا",
+      "originalName": "Leg Extensions",
+      "equipment": "دستگاه",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/leg-extensions"
     },
     {
-      "name": "Lunges",
-      "equipment": "Dumbbells",
-      "difficulty": "Beginner",
+      "name": "لانژ",
+      "originalName": "Lunges",
+      "equipment": "دمبل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/lunges"
     },
     {
-      "name": "Calf Raises",
-      "equipment": "Machine",
-      "difficulty": "Beginner",
+      "name": "پلانتار",
+      "originalName": "Calf Raises",
+      "equipment": "دستگاه",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/calf-raises"
     }
   ],
   "shoulders": [
     {
-      "name": "Overhead Press",
-      "equipment": "Barbell",
-      "difficulty": "Intermediate",
+      "name": "پرس شانه",
+      "originalName": "Overhead Press",
+      "equipment": "هالتر",
+      "difficulty": "متوسط",
       "video": "https://example.com/ohp"
     },
     {
-      "name": "Dumbbell Shoulder Press",
-      "equipment": "Dumbbells",
-      "difficulty": "Beginner",
+      "name": "پرس شانه با دمبل",
+      "originalName": "Dumbbell Shoulder Press",
+      "equipment": "دمبل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/dumbbell-press"
     },
     {
-      "name": "Lateral Raises",
-      "equipment": "Dumbbells",
-      "difficulty": "Beginner",
+      "name": "بال زدن جانبی",
+      "originalName": "Lateral Raises",
+      "equipment": "دمبل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/lateral-raises"
     },
     {
-      "name": "Front Raises",
-      "equipment": "Dumbbells",
-      "difficulty": "Beginner",
+      "name": "بال زدن جلو",
+      "originalName": "Front Raises",
+      "equipment": "دمبل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/front-raises"
     },
     {
-      "name": "Face Pulls",
-      "equipment": "Cable",
-      "difficulty": "Beginner",
+      "name": "کشش صورت",
+      "originalName": "Face Pulls",
+      "equipment": "کابل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/face-pulls"
     },
     {
-      "name": "Upright Rows",
-      "equipment": "Barbell",
-      "difficulty": "Intermediate",
+      "name": "کشش مستقیم",
+      "originalName": "Upright Rows",
+      "equipment": "هالتر",
+      "difficulty": "متوسط",
       "video": "https://example.com/upright-rows"
     }
   ],
   "arms": [
     {
-      "name": "Barbell Curl",
-      "equipment": "Barbell",
-      "difficulty": "Beginner",
+      "name": "خم کردن بازو با هالتر",
+      "originalName": "Barbell Curl",
+      "equipment": "هالتر",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/bicep-curl"
     },
     {
-      "name": "Tricep Dips",
-      "equipment": "Bodyweight",
-      "difficulty": "Intermediate",
+      "name": "دیپ",
+      "originalName": "Tricep Dips",
+      "equipment": "وزن بدن",
+      "difficulty": "متوسط",
       "video": "https://example.com/tricep-dips"
     },
     {
-      "name": "Hammer Curls",
-      "equipment": "Dumbbells",
-      "difficulty": "Beginner",
+      "name": "خم کردن مچ",
+      "originalName": "Hammer Curls",
+      "equipment": "دمبل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/hammer-curls"
     },
     {
-      "name": "Tricep Pushdown",
-      "equipment": "Cable",
-      "difficulty": "Beginner",
+      "name": "پوش داون",
+      "originalName": "Tricep Pushdown",
+      "equipment": "کابل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/tricep-pushdown"
     },
     {
-      "name": "Skull Crushers",
-      "equipment": "Barbell",
-      "difficulty": "Intermediate",
+      "name": "اسکال کراشر",
+      "originalName": "Skull Crushers",
+      "equipment": "هالتر",
+      "difficulty": "متوسط",
       "video": "https://example.com/skull-crushers"
     },
     {
-      "name": "Preacher Curls",
-      "equipment": "Machine",
-      "difficulty": "Beginner",
+      "name": "پرس دمبل بازو",
+      "originalName": "Preacher Curls",
+      "equipment": "دستگاه",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/preacher-curls"
     }
   ],
   "core": [
     {
-      "name": "Plank",
-      "equipment": "Bodyweight",
-      "difficulty": "Beginner",
+      "name": "پلانک",
+      "originalName": "Plank",
+      "equipment": "وزن بدن",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/plank"
     },
     {
-      "name": "Crunches",
-      "equipment": "Bodyweight",
-      "difficulty": "Beginner",
+      "name": "کرانچ",
+      "originalName": "Crunches",
+      "equipment": "وزن بدن",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/crunches"
     },
     {
-      "name": "Hanging Leg Raises",
-      "equipment": "Bodyweight",
-      "difficulty": "Intermediate",
+      "name": "بالا آوردن پا آویزان",
+      "originalName": "Hanging Leg Raises",
+      "equipment": "وزن بدن",
+      "difficulty": "متوسط",
       "video": "https://example.com/leg-raises"
     },
     {
-      "name": "Russian Twists",
-      "equipment": "Bodyweight",
-      "difficulty": "Beginner",
+      "name": "پیچش روسی",
+      "originalName": "Russian Twists",
+      "equipment": "وزن بدن",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/russian-twists"
     },
     {
-      "name": "Cable Crunches",
-      "equipment": "Cable",
-      "difficulty": "Beginner",
+      "name": "کرانچ کابل",
+      "originalName": "Cable Crunches",
+      "equipment": "کابل",
+      "difficulty": "مقدماتی",
       "video": "https://example.com/cable-crunches"
     }
   ]
