@@ -154,9 +154,9 @@ const SettingsTab: React.FC = () => {
           </ul>
           <p>All data is stored locally in your browser.</p>
           <p style={{ marginTop: "15px", fontWeight: "bold" }}>
-            Developed by: [Your Name]
+            Developed by: Ali Morsali
           </p>
-          <p>Contact: [Your Email]</p>
+          <p>Contact: Ali.morsali.2000@gmail.com</p>
         </div>
       </div>
     </div>
